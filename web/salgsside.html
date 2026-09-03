@@ -1,4 +1,4 @@
-<title>Enkelform</title>
+<title>Enkelvekt</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
@@ -67,9 +67,9 @@
     border-bottom: 1px solid var(--line);
   }
   .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
-  .logo { display: flex; align-items: center; gap: .6rem; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.35rem; color: var(--ink); text-decoration: none; }
-  .mark { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); position: relative; flex: none; }
-  .mark::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: var(--sun); }
+  .logo { display: flex; align-items: center; gap: .55rem; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+  .logo em { font-style: normal; color: var(--accent-deep); }
+  .mark { width: 34px; height: 34px; flex: none; display: block; }
 
   .btn {
     display: inline-flex; align-items: center; justify-content: center;
@@ -173,7 +173,7 @@
 
 <div class="bar">
   <div class="wrap">
-    <a class="logo" href="#"><span class="mark"></span>Enkelform</a>
+    <a class="logo" href="#"><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#4FA8EA"/><path d="M8 21.5 L26 15.5" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/><circle cx="17" cy="24.2" r="2.4" fill="#FFFFFF"/><circle cx="25" cy="11.2" r="3.4" fill="#FFD25A"/></svg><span>Enkel<em>vekt</em></span></a>
     <a class="btn btn-sun btn-sm" href="#kjop">Les den nå · 199 kr</a>
   </div>
 </div>
@@ -200,7 +200,7 @@
         <div class="t">Før du kjøper én ting til</div>
         <div class="s">Det ene bransjen ikke tjener penger på å fortelle deg</div>
       </div>
-      <div class="s">Enkelform</div>
+      <div class="s" style="font-family:Nunito,sans-serif;font-weight:900;font-size:1.1rem">Enkelvekt</div>
     </div>
   </div>
 </section>
@@ -381,7 +381,7 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>Enkelform</strong> · <span class="ph">[Selskapsnavn AS, org.nr, e-post]</span></p>
+    <p><strong>Enkelvekt</strong> · <span class="ph">[Selskapsnavn AS, org.nr, e-post]</span></p>
     <p>PDF-en er generell opplysning om kosthold og trening og erstatter ikke råd fra lege. Digitalt innhold leveres umiddelbart, og du samtykker ved kjøp til at angreretten bortfaller. Vår egen 30-dagers garanti gjelder uansett.</p>
   </div>
 </footer>
