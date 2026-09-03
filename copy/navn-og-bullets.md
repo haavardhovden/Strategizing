@@ -87,3 +87,15 @@ Eksempler på plassering i brevet:
   "Nei, dette er ikke for eller mot. Det er en samtale mellom deg og legen din. Men du bør gå inn i den samtalen med bedre spørsmål enn du har nå."
 - Rett etter "tjue minutter":
   "Ja, det er kort. Det er ikke fordi jeg har lite å si. Det er fordi sannheten ikke er lang. Det er bare salget av den som er langt."
+
+### "Mer enn Arnold visste" (utdatert kunnskap som salgspunkt)
+
+Sant hvis det formuleres presist: Arnold kunne muskelbygging, det holder fortsatt.
+Det utdaterte er rundt: punktforbrenning, små måltider for "forbrenningen", kondisjon
+som slankenøkkel, ekstreme proteinmengder, alt handler om disiplin. Navngitt kjent person
+i Meta-annonser: la være. I PDF-en og som én linje på salgssiden: greit.
+
+- Etter tjue minutter vet du ting om kroppen din som Arnold Schwarzenegger ikke visste da han vant Mr. Olympia. Ikke fordi du er smartere. Fordi det ikke var oppdaget ennå.
+- Det treneren din lærte på kurs, er stort sett det Arnold trodde i 1975. Tre av tingene er motbevist. Side 9 viser hvilke.
+- Sit-ups for magefett. Små måltider for "å holde forbrenningen i gang". Kondisjon for å gå ned. Alt fra en tid da vi ikke visste bedre. Alt selges fortsatt.
+- Du kommer til å vite mer om hvorfor du legger på deg enn de fleste personlige trenere. Ikke fordi de er dårlige. Fordi pensumet deres er eldre enn deg. (Kan stå i annonse.)
