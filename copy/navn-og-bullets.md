@@ -13,7 +13,8 @@ om følelseslivet og "koblingene" til overvektige. Kjøp den før PDF-en skrives
 
 | Navn | Hvorfor | Risiko |
 |---|---|---|
-| **Enkelvekt** | Speiler Enkeleksamen. "Form" dekker trening og kosthold uten å love vekt. | Nært nok til å se ut som en kopi |
+| **Enkelvekt** (valgt) | Speiler Enkeleksamen. Sier problemet rett ut, avataren googler "vekt". | Setter "vekt" i merket, smalere løfte enn copyen gir |
+| **Enkelform** | "Form" dekker trening og kosthold uten å love vekt. | Litt vagere |
 | **Ferdig** | Hele løftet i ett ord. "Ferdig med å lete." Modig, huskes. | Vanskelig å google, trenger ferdig.no |
 | **Siste gang** | Løftet om at dette er siste gang du starter på nytt. Emosjonelt presist. | Kan leses som en ny kur |
 | **Formkoden** | "Koden" signaliserer mekanisme, ikke plan. Passer Why Men Crack. | Litt guru-aktig |
@@ -21,8 +22,7 @@ om følelseslivet og "koblingene" til overvektige. Kjøp den før PDF-en skrives
 | **Nullkur** | Anti-posisjonering i navnet. Selger mangelen som fordelen. | Negativt navn kan slite over tid |
 | **Formskolen** | Skole-rammen fra Enkeleksamen. Utdanning, ikke behandling. Juridisk trygt. | Kan høres ut som et kurs med lærer |
 
-Anbefaling: Enkelvekt eller Ferdig. Enkelvekt er tryggest. Ferdig er det beste
-merket hvis domenet finnes. Sjekk domener og Brønnøysund før noe bestemmes.
+Besluttet: Enkelvekt. Sjekk domene og Brønnøysund før lansering.
 
 ## Bullets (fascinasjoner)
 
