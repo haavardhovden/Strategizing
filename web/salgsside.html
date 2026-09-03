@@ -19,47 +19,7 @@
     --good: #2E9E6B;
     --bad: #D9534F;
     --shadow: 0 10px 30px rgba(31,127,196,.12);
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ground: #0E1B27;
-      --tint: #142636;
-      --tint-2: #1B3247;
-      --surface: #142636;
-      --ink: #EAF3FA;
-      --ink-2: #C7D8E6;
-      --muted: #8FA6BA;
-      --line: #274158;
-      --accent: #5FB6F2;
-      --accent-deep: #8CCBF6;
-      --accent-ink: #0E1B27;
-      --sun: #FFD25A;
-      --sun-ink: #2B2000;
-      --good: #57C08F;
-      --bad: #F07572;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --ground: #0E1B27;
-    --tint: #142636;
-    --tint-2: #1B3247;
-    --surface: #142636;
-    --ink: #EAF3FA;
-    --ink-2: #C7D8E6;
-    --muted: #8FA6BA;
-    --line: #274158;
-    --accent: #5FB6F2;
-    --accent-deep: #8CCBF6;
-    --accent-ink: #0E1B27;
-    --sun: #FFD25A;
-    --sun-ink: #2B2000;
-    --good: #57C08F;
-    --bad: #F07572;
-    --shadow: 0 10px 30px rgba(0,0,0,.35);
-    color-scheme: dark;
+    color-scheme: light only;
   }
 
   * { box-sizing: border-box; }
@@ -68,11 +28,11 @@
     background: var(--ground);
     color: var(--ink);
     font-family: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 19px;
+    font-size: 20px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, .display {
+  h1, h2, h3 {
     font-family: "Nunito", "Segoe UI", Helvetica, Arial, sans-serif;
     font-weight: 900;
     letter-spacing: -0.015em;
@@ -80,16 +40,14 @@
     text-wrap: balance;
     margin: 0;
   }
-  h1 { font-size: clamp(2.2rem, 5.2vw, 3.6rem); }
+  h1 { font-size: clamp(2.3rem, 5.4vw, 3.8rem); }
   h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
-  h3 { font-size: 1.25rem; font-weight: 800; }
+  h3 { font-size: 1.3rem; font-weight: 800; }
   p { margin: 0; }
-  a { color: var(--accent-deep); }
   strong { font-weight: 600; }
-  em { font-style: italic; }
 
   .wrap { width: min(1040px, calc(100% - 2.5rem)); margin-inline: auto; }
-  .narrow { width: min(660px, 100%); margin-inline: auto; }
+  .narrow { width: min(640px, 100%); margin-inline: auto; }
   section { padding-block: clamp(3.5rem, 7vw, 6rem); }
   .tinted { background: var(--tint); }
 
@@ -102,10 +60,9 @@
     color: var(--accent-deep);
   }
 
-  /* Top bar */
   .bar {
     position: sticky; top: 0; z-index: 10;
-    background: color-mix(in srgb, var(--ground) 88%, transparent);
+    background: rgba(255,255,255,.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
@@ -115,28 +72,26 @@
   .mark::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: var(--sun); }
 
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    display: inline-flex; align-items: center; justify-content: center;
     font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.05rem;
     padding: .95rem 1.6rem; border-radius: 999px; text-decoration: none;
     border: 0; cursor: pointer; white-space: nowrap;
-    transition: transform .12s ease, box-shadow .12s ease;
+    transition: transform .12s ease;
   }
   .btn:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: 3px; }
   .btn-sun { background: var(--sun); color: var(--sun-ink); box-shadow: 0 6px 0 rgba(0,0,0,.12); }
   .btn-sun:hover { transform: translateY(-2px); }
-  .btn-blue { background: var(--accent); color: var(--accent-ink); }
   .btn-sm { font-size: .95rem; padding: .65rem 1.2rem; }
   .btn-big { font-size: 1.2rem; padding: 1.15rem 2.2rem; }
   .btn-note { display: block; margin-top: .7rem; font-size: .95rem; color: var(--muted); }
 
-  /* Hero */
   .hero { position: relative; overflow: hidden; padding-block: clamp(3rem, 7vw, 5.5rem) clamp(3rem, 6vw, 5rem); }
   .hero .blob { position: absolute; border-radius: 50%; background: var(--tint-2); z-index: 0; }
   .hero .b1 { width: 520px; height: 520px; right: -180px; top: -200px; }
   .hero .b2 { width: 220px; height: 220px; left: -90px; bottom: -80px; background: var(--tint); }
   .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; align-items: center; }
   .hero h1 { margin-block: .8rem 1.2rem; }
-  .hero .lead { font-size: 1.25rem; color: var(--ink-2); max-width: 32rem; }
+  .hero .lead { font-size: 1.3rem; color: var(--ink-2); max-width: 30rem; }
   .hero .cta { margin-top: 1.8rem; }
   .trust { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin-top: 1.6rem; font-size: .95rem; color: var(--muted); }
   .trust span { display: inline-flex; align-items: center; gap: .4rem; }
@@ -152,81 +107,49 @@
   .book .s { font-size: .95rem; opacity: .9; }
   .book .pill { align-self: flex-start; background: var(--sun); color: var(--sun-ink); border-radius: 999px; padding: .3rem .8rem; font-family: "Nunito", sans-serif; font-weight: 800; font-size: .85rem; }
 
-  /* Letter */
-  .letter { max-width: 640px; margin-inline: auto; }
-  .letter p { margin-bottom: 1.25rem; }
-  .letter .big { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.6rem; line-height: 1.2; color: var(--ink); margin-block: 1.6rem; padding: 1.2rem 1.4rem; background: var(--tint); border-radius: 18px; border-left: 6px solid var(--accent); }
-  .letter h2 { margin-block: 2.2rem 1rem; font-size: 1.8rem; }
-  .letter h3 { margin-block: 1.8rem .6rem; }
-  .letter .sig { font-family: "Nunito", sans-serif; font-weight: 800; color: var(--ink-2); }
-  .letter .ps { border-top: 1px solid var(--line); padding-top: 1.2rem; margin-top: 2rem; }
+  .letter { max-width: 620px; margin-inline: auto; }
+  .letter p { margin-bottom: 1.3rem; }
+  .letter .big { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.7rem; line-height: 1.2; margin-block: 1.8rem; padding: 1.3rem 1.5rem; background: var(--tint); border-radius: 18px; border-left: 6px solid var(--accent); }
 
-  /* Recognise list */
-  .recog { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: .6rem; }
+  .recog { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .6rem; }
   .recog li { padding: .9rem 1.1rem .9rem 3rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; position: relative; }
   .recog li::before { content: ""; position: absolute; left: 1.1rem; top: 1.15rem; width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--accent); }
 
-  /* Model tiles */
-  .models { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.6rem; }
-  .model { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.2rem; display: grid; gap: .4rem; }
-  .model .n { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.1rem; }
-  .model .l { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-top: .5rem; }
-  .model .v { color: var(--ink-2); }
+  .models { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.8rem; }
+  .model { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.3rem; display: grid; gap: .3rem; }
+  .model .n { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.15rem; margin-bottom: .4rem; }
+  .model .l { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .model .v { color: var(--ink-2); margin-bottom: .5rem; }
 
-  /* Comparison */
-  .cmp-wrap { overflow-x: auto; margin-top: 1.6rem; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); }
-  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 1rem; }
-  th, td { text-align: left; padding: .95rem 1.1rem; vertical-align: top; border-bottom: 1px solid var(--line); }
-  th { font-family: "Nunito", sans-serif; font-weight: 800; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--tint); }
-  tbody tr:last-child td { border-bottom: 0; }
-  td:first-child { font-weight: 600; white-space: nowrap; }
-  tr.us td { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); font-weight: 600; }
-  .num { font-variant-numeric: tabular-nums; }
-  .no { color: var(--bad); font-weight: 600; }
-  .yes { color: var(--good); font-weight: 600; }
+  .loops { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 1rem; }
+  .loops li { display: grid; grid-template-columns: 28px 1fr; gap: .9rem; align-items: start; }
+  .loops .dot { width: 28px; height: 28px; border-radius: 50%; background: var(--sun); flex: none; margin-top: .3rem; }
 
-  /* Bullets */
-  .loops { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .9rem; }
-  .loops li { display: grid; grid-template-columns: 28px 1fr; gap: .8rem; align-items: start; }
-  .loops .dot { width: 28px; height: 28px; border-radius: 50%; background: var(--sun); display: grid; place-items: center; font-family: "Nunito", sans-serif; font-weight: 900; color: var(--sun-ink); font-size: .9rem; flex: none; margin-top: .1rem; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.8rem; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.5rem; }
+  .card h3 { margin-bottom: .9rem; }
+  .card ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .6rem; color: var(--ink-2); }
 
-  /* Not for you */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.6rem; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.4rem; }
-  .card h3 { margin-bottom: .8rem; }
-  .card ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .5rem; color: var(--ink-2); }
-
-  /* Objections */
-  .obj { display: grid; gap: .8rem; margin-top: 1.6rem; }
-  details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 0 1.2rem; }
-  summary { cursor: pointer; padding: 1rem 0; font-family: "Nunito", sans-serif; font-weight: 800; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+  .obj { display: grid; gap: .8rem; margin-top: 1.8rem; }
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 0 1.3rem; }
+  summary { cursor: pointer; padding: 1.05rem 0; font-family: "Nunito", sans-serif; font-weight: 800; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
   summary::-webkit-details-marker { display: none; }
   summary::after { content: "+"; font-size: 1.5rem; color: var(--accent-deep); flex: none; }
   details[open] summary::after { content: "–"; }
-  details p { padding-bottom: 1.1rem; color: var(--ink-2); }
+  details p { padding-bottom: 1.2rem; color: var(--ink-2); }
   summary:focus-visible { outline: 3px solid var(--accent-deep); outline-offset: -3px; border-radius: 12px; }
 
-  /* Value */
-  .spent { display: grid; grid-template-columns: 1fr auto; gap: .5rem 1.5rem; margin-top: 1.4rem; max-width: 520px; }
-  .spent div { padding: .55rem 0; border-bottom: 1px dashed var(--line); }
-  .spent .r { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
-  .spent .tot { border-bottom: 0; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 1.2rem; padding-top: .9rem; }
-  .spent .us { color: var(--accent-deep); }
-
-  /* Guarantee */
   .guar { background: var(--surface); border: 2px solid var(--accent); border-radius: 24px; padding: clamp(1.5rem, 4vw, 2.5rem); display: grid; grid-template-columns: auto 1fr; gap: 1.6rem; align-items: center; box-shadow: var(--shadow); }
-  .seal { width: 110px; height: 110px; border-radius: 50%; background: var(--sun); color: var(--sun-ink); display: grid; place-items: center; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900; line-height: 1; flex: none; }
+  .seal { width: 110px; height: 110px; border-radius: 50%; background: var(--sun); color: var(--sun-ink); display: grid; place-items: center; text-align: center; font-family: "Nunito", sans-serif; font-weight: 900; line-height: 1; }
   .seal b { font-size: 2rem; display: block; }
   .seal small { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
 
-  /* Author */
-  .who { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.6rem; }
+  .who { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.8rem; }
   .who .card { display: grid; grid-template-columns: 64px 1fr; gap: 1rem; align-items: start; }
   .avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--tint-2); border: 2px dashed var(--accent); }
   .who .role { font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
   .ph { color: var(--muted); font-style: italic; }
 
-  /* Final */
   .final { text-align: center; }
   .final h2 { margin-bottom: 1rem; }
   .final .price { font-family: "Nunito", sans-serif; font-weight: 900; font-size: 3rem; color: var(--accent-deep); line-height: 1; margin-block: 1.2rem .4rem; }
@@ -239,7 +162,7 @@
   @media (max-width: 800px) {
     body { font-size: 18px; }
     .hero .wrap { grid-template-columns: 1fr; }
-    .book { max-width: 260px; transform: rotate(-1.5deg); }
+    .book { max-width: 260px; }
     .models { grid-template-columns: 1fr 1fr; }
     .split, .who { grid-template-columns: 1fr; }
     .guar { grid-template-columns: 1fr; text-align: center; justify-items: center; }
@@ -261,24 +184,23 @@
     <div>
       <p class="eyebrow">Før du kjøper én ting til</p>
       <h1>Du kommer aldri til å se på trening og kosthold på samme måte igjen.</h1>
-      <p class="lead">Én PDF. Tjue minutter. Det bransjen ikke har råd til å fortelle deg, forklart så enkelt at du blir litt irritert over at ingen sa det før.</p>
+      <p class="lead">Én PDF. Tjue minutter. Det bransjen ikke har råd til å fortelle deg.</p>
       <div class="cta">
         <a class="btn btn-sun btn-big" href="#kjop">Les den nå · 199 kr</a>
-        <span class="btn-note">Levert på e-post på under to minutter. 30 dagers pengene tilbake, null spørsmål.</span>
+        <span class="btn-note">30 dagers pengene tilbake. Null spørsmål.</span>
       </div>
       <div class="trust">
         <span><i class="tick"></i>Gjennomgått av klinisk ernæringsfysiolog</span>
-        <span><i class="tick"></i>Ingen app, ingen logging, ingen abonnement</span>
-        <span><i class="tick"></i>Engangspris, inkl. mva</span>
+        <span><i class="tick"></i>Ingen app. Ingen logging. Ingen abonnement.</span>
       </div>
     </div>
     <div class="book" aria-hidden="true">
-      <span class="pill">20 min lesetid</span>
+      <span class="pill">20 min</span>
       <div>
         <div class="t">Før du kjøper én ting til</div>
         <div class="s">Det ene bransjen ikke tjener penger på å fortelle deg</div>
       </div>
-      <div class="s">Enkelform · utgave 1</div>
+      <div class="s">Enkelform</div>
     </div>
   </div>
 </section>
@@ -286,34 +208,14 @@
 <section>
   <div class="wrap">
     <div class="letter">
-      <p class="eyebrow">Et brev til deg som har prøvd</p>
-      <h2 style="margin-top:.6rem">Neste gang du ser en annonse for fettforbrennende kapsler, kommer du til å smile.</h2>
+      <h2 style="margin-bottom:1.4rem">Neste gang du ser en annonse for fettforbrennende kapsler, kommer du til å smile.</h2>
       <p>Ikke fordi du er blitt kynisk. Fordi du vet nøyaktig hvorfor de finnes, og hvorfor de fungerer så dårlig at kunden kommer tilbake og kjøper flere.</p>
       <p>Det samme kommer til å skje med den personlige treneren som selger deg tolv timer for å lære deg noe du kan lære på tolv minutter. Og med appen som vil at du skal logge hver eneste gulrot.</p>
-      <p>Om tjue minutter kommer du til å se hva de alle har til felles. Det er én ting, og når du først har sett den, kan du ikke slutte å se den.</p>
-      <p>Men først vil jeg at du skal kjenne etter om dette er deg.</p>
-
-      <h3>Kjenner du igjen noen av disse?</h3>
-      <ul class="recog">
-        <li>Du har startet på nytt en mandag. Flere ganger. Sannsynligvis i år.</li>
-        <li>Du har lest så mange artikler om kosthold at du ikke lenger vet hva du skal spise til middag.</li>
-        <li>Du har en app på telefonen du sluttet å åpne etter elleve dager.</li>
-        <li>Du har hørt "det handler bare om kalorier inn og ut" og tenkt: ja, men hvorfor funker det ikke for meg?</li>
-        <li>Du har vurdert en PT, eller en sprøyte, eller begge deler, og kjent på at det egentlig er et nederlag.</li>
-        <li>Du vet at du burde gjøre noe. Du aner bare ikke hvor du skal begynne, fordi alle sier noe forskjellig.</li>
-      </ul>
-
-      <p style="margin-top:1.6rem">Hvis du nikket til to eller flere, så les videre. Dette er ikke skrevet for folk som trenger motivasjon. Det er skrevet for folk som har motivasjon til overs, og som likevel står på samme sted.</p>
-      <p>Og det er ikke din skyld. Her er grunnen.</p>
-
-      <h2>Den ene tingen</h2>
-      <p>Kapselen. Kuren. Appen. Treneren. Sprøyta. De ser ut som fem forskjellige løsninger. De er én og samme forretningsmodell.</p>
+      <p>De ser ut som tre forskjellige løsninger. De er én og samme forretningsmodell.</p>
       <div class="big">Ingen av dem tjener penger på at du blir ferdig.</div>
-      <p>Les den setningen én gang til. Den er ikke en anklage. Det er regnskap.</p>
-      <p>Kapselen må kjøpes igjen neste måned. Treneren må bookes igjen neste uke. Appen må åpnes igjen i morgen, ellers dør abonnementet. Kuren har en dag 30, og dag 31 er en ny kur.</p>
-      <p>Alle sammen er bygget rundt det samme problemet: <strong>det som faktisk virker, er for enkelt til å selges to ganger.</strong></p>
-      <p>Så de gjør det vanskelig. Ikke fordi de er onde. Fordi vanskelig kan faktureres, og enkelt kan det ikke.</p>
-      <p>Og du har sittet på den andre siden av bordet og trodd at det var deg som var problemet. At du manglet disiplin. At du ikke visste nok. At du bare trengte det neste.</p>
+      <p>Kapselen må kjøpes igjen neste måned. Treneren må bookes igjen neste uke. Appen må åpnes igjen i morgen. Kuren har en dag 30, og dag 31 er en ny kur.</p>
+      <p><strong>Det som faktisk virker, er for enkelt til å selges to ganger.</strong> Så de gjør det vanskelig. Ikke fordi de er onde. Fordi vanskelig kan faktureres.</p>
+      <p>Og du har sittet på den andre siden av bordet og trodd at det var deg som var problemet.</p>
       <p>Du manglet ingenting. Du har bare aldri fått se det enkle, fordi ingen har hatt råd til å vise deg det.</p>
     </div>
   </div>
@@ -322,38 +224,32 @@
 <section class="tinted">
   <div class="wrap">
     <div class="narrow">
-      <p class="eyebrow">Se det selv</p>
-      <h2>Fire produkter. Én modell.</h2>
-      <p style="margin-top:.8rem;color:var(--ink-2)">Spør ett spørsmål om hver av dem: hva skjer med inntekten deres den dagen du ikke trenger dem lenger?</p>
+      <h2>Kjenner du deg igjen?</h2>
     </div>
-    <div class="models">
-      <div class="model"><div class="n">Kapselen</div><div class="l">Tjener når du</div><div class="v">kjøper neste boks</div><div class="l">Taper når du</div><div class="v">forstår hvorfor den ikke trengs</div></div>
-      <div class="model"><div class="n">Appen</div><div class="l">Tjener når du</div><div class="v">logger hver dag, hver måned</div><div class="l">Taper når du</div><div class="v">kan det utenat</div></div>
-      <div class="model"><div class="n">Treneren</div><div class="l">Tjener når du</div><div class="v">booker ti timer til</div><div class="l">Taper når du</div><div class="v">klarer deg selv</div></div>
-      <div class="model"><div class="n">Kuren</div><div class="l">Tjener når du</div><div class="v">starter på nytt i januar</div><div class="l">Taper når du</div><div class="v">aldri trenger å starte på nytt</div></div>
+    <div class="narrow">
+      <ul class="recog">
+        <li>Du har startet på nytt en mandag. Flere ganger. Sannsynligvis i år.</li>
+        <li>Du har lest så mye om kosthold at du ikke vet hva du skal spise til middag.</li>
+        <li>Du har en app du sluttet å åpne etter elleve dager.</li>
+        <li>Du har vurdert en PT, eller en sprøyte, og kjent på at det egentlig er et nederlag.</li>
+      </ul>
+      <p style="margin-top:1.6rem;color:var(--ink-2)">To eller flere? Da er dette skrevet til deg. Ikke for å motivere deg. Du har motivasjon til overs. Det er noe annet som mangler.</p>
     </div>
-    <p style="margin-top:1.6rem;max-width:660px;margin-inline:auto;color:var(--ink-2)">Denne PDF-en er det motsatte. Den koster 199 kr én gang. Det finnes ingen neste boks, ingen måned to, ingen time elleve. Den eneste måten den tjener penger på, er at du leser den og anbefaler den til noen. Det er hele modellen.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <div class="narrow">
-      <p class="eyebrow">Alternativene, ærlig satt opp</p>
-      <h2>Hva du får, og hva du sitter igjen med.</h2>
-      <p style="margin-top:.8rem;color:var(--ink-2)">Ingen av disse er svindel. Noen av dem virker for noen. Men se på den siste kolonnen. Det er den som avgjør om du er tilbake her om et år.</p>
+      <p class="eyebrow">Se det selv</p>
+      <h2>Spør ett spørsmål om hver av dem.</h2>
+      <p style="margin-top:.8rem;color:var(--ink-2)">Hva skjer med inntekten deres den dagen du ikke trenger dem lenger?</p>
     </div>
-    <div class="cmp-wrap">
-      <table>
-        <thead><tr><th>Alternativ</th><th>Hva det koster</th><th>Hva du lærer om kroppen din</th><th>Hva du sitter igjen med når det er over</th></tr></thead>
-        <tbody>
-          <tr><td>Slankesprøyte</td><td class="num">Flere tusen i måneden, så lenge du bruker den</td><td class="no">Ingenting. Det er ikke det den er til.</td><td>Samme spørsmål som før, pluss en regning</td></tr>
-          <tr><td>Personlig trener</td><td class="num">800 til 1 200 kr per time, ti timer minimum</td><td>Litt, fordelt over ti timer du betaler for</td><td>Et program du ikke forstår hvorfor virket</td></tr>
-          <tr><td>Kaloriapp</td><td class="num">100 til 150 kr i måneden, for alltid</td><td>Tall, ikke forståelse</td><td>En vane som dør den dagen du slutter å logge</td></tr>
-          <tr><td>Kur og kapsler</td><td class="num">400 til 2 000 kr per runde</td><td class="no">Ingenting, og ofte feil ting</td><td>Dag 31</td></tr>
-          <tr class="us"><td>Denne PDF-en</td><td class="num">199 kr, én gang</td><td class="yes">De tre tingene som faktisk avgjør</td><td>Du ser det. Og du kan ikke slutte å se det.</td></tr>
-        </tbody>
-      </table>
+    <div class="models">
+      <div class="model"><div class="n">Kapselen</div><div class="l">Tjener når du</div><div class="v">kjøper neste boks</div><div class="l">Taper når du</div><div class="v">forstår hvorfor den ikke trengs</div></div>
+      <div class="model"><div class="n">Appen</div><div class="l">Tjener når du</div><div class="v">logger, hver dag, for alltid</div><div class="l">Taper når du</div><div class="v">kan det utenat</div></div>
+      <div class="model"><div class="n">Treneren</div><div class="l">Tjener når du</div><div class="v">booker ti timer til</div><div class="l">Taper når du</div><div class="v">klarer deg selv</div></div>
+      <div class="model"><div class="n">Denne PDF-en</div><div class="l">Tjener når du</div><div class="v">leser den én gang</div><div class="l">Taper når du</div><div class="v">ingenting. Det finnes ingen neste.</div></div>
     </div>
   </div>
 </section>
@@ -364,14 +260,12 @@
       <p class="eyebrow">Hva som står i den</p>
       <h2>Tjue minutter. Ikke ett ord til.</h2>
       <ul class="loops">
-        <li><span class="dot">1</span><span>De tre tingene som avgjør om du legger på deg eller går ned. Én av dem har du hørt tusen ganger. De to andre har sannsynligvis ingen forklart deg, fordi de ikke kan selges.</span></li>
-        <li><span class="dot">2</span><span>Hvorfor "kalorier inn og ut" er sant og likevel har vært ubrukelig for deg. Det mangler ett ledd, og det leddet står på side sju.</span></li>
-        <li><span class="dot">3</span><span>Det ene spørsmålet du kan stille til enhver diett, kur eller app, som avslører på ti sekunder om den kommer til å funke for deg.</span></li>
-        <li><span class="dot">4</span><span>Hvorfor du slutter etter elleve dager. Det er ikke viljestyrke. Det er en designfeil i alt du har prøvd, og den er lett å se når du vet hva du ser etter.</span></li>
-        <li><span class="dot">5</span><span>Det som faktisk skjer i kroppen din de første to ukene, og hvorfor vekta lyver akkurat da. De fleste gir opp på grunn av dette, uten å vite det.</span></li>
-        <li><span class="dot">6</span><span>Trening, redusert til det som betyr noe. Det er mindre enn du tror, og det er derfor ingen trener forteller deg det.</span></li>
-        <li><span class="dot">7</span><span>Én ting du kan sjekke i ditt eget kjøkkenskap i kveld, som viser deg mekanismen med egne øyne.</span></li>
-        <li><span class="dot">8</span><span>Hva du bør vite før du ber legen om slankesprøyte, som legen ikke rekker å forklare på ti minutter. Ikke for eller mot. Bare det du bør vite.</span></li>
+        <li><span class="dot"></span><span>De tre tingene som avgjør om du legger på deg eller går ned. Én har du hørt tusen ganger. De to andre kan ikke selges, og derfor har ingen fortalt deg dem.</span></li>
+        <li><span class="dot"></span><span>Hvorfor vekta går ned de tre første dagene av enhver diett, og hvorfor det er nettopp derfor du gir opp i uke tre.</span></li>
+        <li><span class="dot"></span><span>Hvor mye du faktisk forbrenner på en halvtime på tredemølla, sammenlignet med én skolebolle. Tallet gjør at du slutter å "trene bort" ting for alltid.</span></li>
+        <li><span class="dot"></span><span>Én ting du kan sjekke på baksiden av en pakke i kjøkkenskapet i kveld. Det er hele mekanismen, med egne øyne.</span></li>
+        <li><span class="dot"></span><span>Det ene spørsmålet på sju ord du kan stille til enhver diett, app eller kur. Svaret avslører på ti sekunder om den funker for deg om ett år.</span></li>
+        <li><span class="dot"></span><span>Hva legen din vet om sult som ingen treningssenter kommer til å fortelle deg. Les det før du ber om resept på noe som helst.</span></li>
       </ul>
     </div>
   </div>
@@ -380,7 +274,6 @@
 <section>
   <div class="wrap">
     <div class="narrow">
-      <p class="eyebrow">Ærlig talt</p>
       <h2>Dette er ikke for alle.</h2>
     </div>
     <div class="split">
@@ -388,16 +281,14 @@
         <h3>Ikke kjøp den hvis</h3>
         <ul>
           <li>Du vil ha noen som passer på deg hver uke. Det er en PT, og det er helt greit.</li>
-          <li>Du leter etter et tall og en dato. Det står ingen løfter om kilo her, og det er med vilje.</li>
-          <li>Du vil ha en ny plan å følge. Dette er ikke en plan. Det er grunnen til at planene dine har feilet.</li>
-          <li>Du har en sykdom, er gravid eller går på medisiner. Da er legen din den rette å snakke med først.</li>
+          <li>Du leter etter et tall og en dato. Det står ingen løfter om kilo her. Med vilje.</li>
+          <li>Du har en sykdom, er gravid eller går på medisiner. Snakk med legen først.</li>
         </ul>
       </div>
       <div class="card">
         <h3>Kjøp den hvis</h3>
         <ul>
           <li>Du er lei av å bli forvirret av folk som tjener på forvirringen.</li>
-          <li>Du vil forstå, én gang, og så være ferdig med å lete.</li>
           <li>Du er i ferd med å bruke flere tusen på en PT, en kur eller en sprøyte, og vil lese tjue minutter først.</li>
           <li>Du vil at neste valg skal være et bevisst valg. Uansett hva du velger.</li>
         </ul>
@@ -409,36 +300,23 @@
 <section class="tinted">
   <div class="wrap">
     <div class="narrow">
-      <p class="eyebrow">Det du sannsynligvis tenker nå</p>
       <h2>Ja, jeg har hørt den før.</h2>
       <div class="obj">
         <details>
           <summary>"Jeg har prøvd alt."</summary>
-          <p>Det er nettopp poenget. Du har prøvd alt som selges. Det du ikke har prøvd, er det som ikke kan selges to ganger, og det er derfor du aldri har fått det presentert. Hvis du har prøvd alt og fortsatt står her, er det ikke bevis på at du er håpløs. Det er bevis på at alt du har prøvd hadde den samme feilen.</p>
+          <p>Du har prøvd alt som selges. Det du ikke har prøvd, er det som ikke kan selges to ganger. Hvis du har prøvd alt og fortsatt står her, er det ikke bevis på at du er håpløs. Det er bevis på at alt du prøvde hadde den samme feilen.</p>
         </details>
         <details>
           <summary>"Jeg vet allerede at det er kalorier inn og ut."</summary>
-          <p>Ja. Og det har ikke hjulpet deg, har det vel? Det er som å si at bilen går på bensin. Sant, og fullstendig ubrukelig når du står i grøfta. Setningen mangler ett ledd. Det leddet er det bransjen lever av at du ikke ser, og det er det PDF-en handler om.</p>
+          <p>Ja. Og det har ikke hjulpet deg. Det er som å vite at bilen går på bensin. Sant, og ubrukelig når du står i grøfta. Setningen mangler ett ledd. Det leddet er hele PDF-en.</p>
         </details>
         <details>
           <summary>"199 kr for en PDF?"</summary>
-          <p>Du har sannsynligvis brukt mer enn det på en app du ikke åpner. En PT-time koster fem ganger så mye og lærer deg en femtedel. Og det er 30 dagers garanti: les hele, og hvis du fortsatt ser på trening og kosthold på samme måte, får du pengene tilbake uten et eneste spørsmål. Risikoen er min, ikke din.</p>
+          <p>Du har brukt mer på en app du ikke åpner. En PT-time koster fem ganger så mye og lærer deg en femtedel. Og risikoen er min: les hele, og hvis du ser på trening og kosthold akkurat som før, får du pengene tilbake.</p>
         </details>
         <details>
-          <summary>"Er dette bare enda en diett med nytt navn?"</summary>
-          <p>Nei. En diett er en plan du skal følge. Dette er forklaringen på hvorfor planene ikke holder. Det står ikke én matplan i PDF-en. Det står hva du skal se etter, slik at enhver plan, inkludert din egen, plutselig gir mening.</p>
-        </details>
-        <details>
-          <summary>"Kan jeg ikke bare google dette?"</summary>
-          <p>Du har prøvd. Det er derfor du har lest 40 artikler og ikke vet hva du skal spise til middag. Alt på nett er skrevet av noen som selger noe, eller kopiert fra noen som selger noe. Dette er tjue minutter uten et eneste produkt i enden. Det er forskjellen.</p>
-        </details>
-        <details>
-          <summary>"Hva med sprøyta? Skal jeg droppe den?"</summary>
-          <p>Det sier vi ingenting om, og det skal vi heller ikke. Det er en samtale mellom deg og legen din. Men det er et par ting du bør forstå om kroppen din før den samtalen, som gjør at du stiller bedre spørsmål og tar et valg du faktisk eier. De tingene står i PDF-en.</p>
-        </details>
-        <details>
-          <summary>"Jeg har ikke tid."</summary>
-          <p>Tjue minutter. Det er kortere enn tiden du brukte på å lete etter en ny app sist. Og det er tjue minutter én gang, ikke tjue minutter hver dag i en app.</p>
+          <summary>"Hva med sprøyta?"</summary>
+          <p>Det sier vi ingenting om. Det er en samtale mellom deg og legen din. Men du bør gå inn i den samtalen med bedre spørsmål enn du har nå. De står i PDF-en.</p>
         </details>
       </div>
     </div>
@@ -448,18 +326,13 @@
 <section>
   <div class="wrap">
     <div class="narrow">
-      <p class="eyebrow">Regnestykket</p>
-      <h2>Hva har du allerede betalt for å ikke forstå?</h2>
-      <p style="margin-top:.8rem;color:var(--ink-2)">Tell ærlig. Bare det siste året.</p>
-      <div class="spent">
-        <div>Kaloriapp, tolv måneder</div><div class="r num">1 500 kr</div>
-        <div>Én kur eller én boks kapsler</div><div class="r num">900 kr</div>
-        <div>To PT-timer du prøvde</div><div class="r num">2 000 kr</div>
-        <div>Treningsutstyret som står i gangen</div><div class="r num">1 200 kr</div>
-        <div class="tot">For å fortsatt ikke vite</div><div class="r tot num">5 600 kr</div>
-        <div class="tot us">For å vite</div><div class="r tot num us">199 kr</div>
+      <div class="guar">
+        <div class="seal"><b>30</b><small>dager</small></div>
+        <div>
+          <h3>Les hele. Ikke fornøyd? Pengene tilbake. Null spørsmål.</h3>
+          <p style="margin-top:.6rem;color:var(--ink-2)">Hvis du fortsatt ser på trening og kosthold akkurat som før, send én e-post. Du får alt tilbake og beholder PDF-en.</p>
+        </div>
       </div>
-      <p style="margin-top:1.4rem;color:var(--ink-2)">Tallene er eksempler. Dine er sannsynligvis høyere. Og det er før du legger til det du vurderer å bruke neste måned.</p>
     </div>
   </div>
 </section>
@@ -467,22 +340,7 @@
 <section class="tinted">
   <div class="wrap">
     <div class="narrow">
-      <div class="guar">
-        <div class="seal"><b>30</b><small>dager</small></div>
-        <div>
-          <h3>Les hele. Ikke fornøyd? Pengene tilbake. Null spørsmål.</h3>
-          <p style="margin-top:.6rem;color:var(--ink-2)">Garantien er selve løftet. Hvis du har lest PDF-en fra første til siste side og fortsatt ser på trening og kosthold akkurat som før, send én e-post innen 30 dager. Du får hele beløpet tilbake, og du beholder PDF-en. Vi spør ikke hvorfor.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="narrow">
-      <p class="eyebrow">Hvem står bak</p>
-      <h2>To personer. Ingen produkter å selge deg etterpå.</h2>
+      <h2>Hvem står bak</h2>
     </div>
     <div class="who">
       <div class="card">
@@ -490,7 +348,7 @@
         <div>
           <div class="role">Skrevet av</div>
           <h3><span class="ph">[Navn]</span></h3>
-          <p style="color:var(--ink-2)"><span class="ph">[To setninger. Hvorfor du har lest om dette i årevis, og hvorfor du ble lei av å se folk betale for forvirring. Ingen titler du ikke har.]</span></p>
+          <p style="color:var(--ink-2)"><span class="ph">[To setninger. Ingen titler du ikke har.]</span></p>
         </div>
       </div>
       <div class="card">
@@ -498,26 +356,24 @@
         <div>
           <div class="role">Faglig gjennomgått av</div>
           <h3><span class="ph">[Navn], klinisk ernæringsfysiolog</span></h3>
-          <p style="color:var(--ink-2)"><span class="ph">[Én setning om hvem, og én om hva vedkommende har sjekket: at det som står er faglig riktig, og at ingenting er pyntet på.]</span></p>
+          <p style="color:var(--ink-2)"><span class="ph">[Én setning om hva som er sjekket.]</span></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="tinted final" id="kjop">
+<section class="final" id="kjop">
   <div class="wrap">
     <div class="narrow">
-      <p class="eyebrow">Før du kjøper én ting til</p>
       <h2>Tjue minutter. Så er du ferdig med å lete.</h2>
-      <p style="color:var(--ink-2)">Etterpå kan du kjøpe PT-timen, laste ned appen eller be om sprøyta. Men da gjør du det fordi du valgte det. Ikke fordi du ikke visste bedre.</p>
+      <p style="color:var(--ink-2)">Etterpå kan du kjøpe PT-timen, laste ned appen eller be om sprøyta. Men da gjør du det fordi du valgte det.</p>
       <div class="price">199 kr <small>én gang, inkl. mva</small></div>
       <a class="btn btn-sun btn-big" href="#">Les den nå</a>
       <div class="facts">
         <span><i class="tick"></i>PDF på e-post innen to minutter</span>
         <span><i class="tick"></i>Vipps eller kort</span>
         <span><i class="tick"></i>30 dagers pengene tilbake</span>
-        <span><i class="tick"></i>Ingen abonnement, ingen app</span>
       </div>
     </div>
   </div>
@@ -525,8 +381,7 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>Enkelform</strong> · <span class="ph">[Selskapsnavn AS, org.nr, adresse, e-post]</span></p>
-    <p>PDF-en er generell opplysning om kosthold og trening og erstatter ikke råd fra lege eller annet helsepersonell. Har du en sykdom, er gravid eller bruker medisiner, snakk med legen din før du endrer kosthold eller trening.</p>
-    <p>Digitalt innhold leveres umiddelbart etter kjøp. Ved kjøp samtykker du til at levering starter med en gang og at angreretten etter angrerettloven bortfaller. Vår egen 30-dagers garanti gjelder uansett.</p>
+    <p><strong>Enkelform</strong> · <span class="ph">[Selskapsnavn AS, org.nr, e-post]</span></p>
+    <p>PDF-en er generell opplysning om kosthold og trening og erstatter ikke råd fra lege. Digitalt innhold leveres umiddelbart, og du samtykker ved kjøp til at angreretten bortfaller. Vår egen 30-dagers garanti gjelder uansett.</p>
   </div>
 </footer>
